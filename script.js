@@ -7,6 +7,7 @@ function loadURL(urlInput, urlLoader) {
   console.log("urlInput", urlInput);
   console.log("urlLoader", urlLoader);
   const url = urlInput.value.trim();
+ console.log("url", url);
   if (url !== "") {
     fetch("https://cors-anywhere.herokuapp.com/" + url, {
       headers: {
@@ -19,22 +20,13 @@ function loadURL(urlInput, urlLoader) {
         // Modify the fetched content to include necessary stylesheets and resources
         console.log("data", data);
         const modifiedContent = `<html>
-               <head>
-                 <base href="${url}"> <!-- Set base URL for relative paths -->
-                 <style>
-                   /* Additional styles to improve appearance */
-                   body {
-                     font-family: Arial, sans-serif;
-                     margin: 0;
-                     padding: 20px; /* Add padding to match page appearance */
-                   }
-                   /* Add more styles as needed */
-                 </style>
-               </head>
-               <body>
-                 ${data} <!-- Insert fetched content -->
-               </body>
-             </html>`;
+                                  <head>
+                                    <base href="${url}"> <!-- Set base URL for relative paths -->
+                                  </head>
+                                  <body>
+                                    ${data} <!-- Insert fetched content -->
+                                  </body>
+                                </html>`;
         urlLoader.srcdoc = modifiedContent;
       })
       .catch((error) => console.error("Error fetching content:", error));
