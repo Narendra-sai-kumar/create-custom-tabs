@@ -1,11 +1,12 @@
 body {
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
   background-image: linear-gradient(to top, #3f9ffa, #76e5fc);
   background-attachment: fixed;
 }
+
 .page-header {
   position: absolute;
   top: 10px;
@@ -43,6 +44,7 @@ body {
   cursor: pointer;
   margin-right: 5px;
   position: relative;
+  font-weight: bold;
   transition: all 0.15s ease-in-out;
 }
 .tab.active {
@@ -90,6 +92,7 @@ body {
   border-radius: 0 0 5px 5px;
   font-weight: bold;
   color: white;
+  text-shadow:2px 2px 4px #000
 }
 .tab-content input {
   width: 60%;
@@ -99,10 +102,9 @@ body {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-right: none;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
-.tab-content input:focus buttton {
-  background-color: red;
-}
+
 .tab-content iframe {
   margin-top: 20px;
   width: 100%;
